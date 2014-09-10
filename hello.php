@@ -11,7 +11,7 @@
 	// Object Oriented Way
 
 	$obj = new example;
-	$obj2 = new example;
+	$obj2 = new example('giuseppe');
 	class example {
 		
 		// Object is initiated, constructor - functions
@@ -20,8 +20,8 @@
 		
 		//Constructor - automatically called when object is initiated 
 
-		function __construct() {
-			echo 'Test';
+		function __construct($name) {
+			echo 'Hi ' . $name;
 		}
 	}
 	
