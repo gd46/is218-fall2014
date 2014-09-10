@@ -9,10 +9,18 @@
 	echo 'Hello World' .  $class;
 
 	// Object Oriented Way
+	
+	$obj->name = 'steve';
+
+	//print_r($obj);
 
 	$obj = new example;
 	$obj2 = new example('giuseppe');
+	$obj->printHelloWorld();
+
 	class example {
+
+		public $name;
 		
 		// Object is initiated, constructor - functions
 		// Functions are inside of a class
@@ -20,8 +28,12 @@
 		
 		//Constructor - automatically called when object is initiated 
 
-		function __construct($name) {
-			echo 'Hi ' . $name;
+		function __construct() {		
+			echo 'Hi ' . $this->name;
+		}
+
+		function printHelloWorld(){
+			echo 'Hi ' . $this->name;
 		}
 	}
 	
