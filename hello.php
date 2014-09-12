@@ -14,7 +14,7 @@
 	print_r($obj);
 
 	// This is how you instantiate an object
-	$obj = new example;
+	$obj = new another;
 
 	// This is how you assign a value to a public property
 	$obj->name = 'steve';
@@ -44,6 +44,13 @@
 			echo "<br>";
 		}
 		
+		// When you extend an object or class 
+		protected function someFunction() {}
+		
+		// Only visible within that object
+		private function someOtherFunction() {}
+	
 	}
+		class another extends example {}
 	
 ?>
