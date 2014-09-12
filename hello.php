@@ -33,7 +33,7 @@
 		// Methods are what you call to active functions
 		
 		//Constructor - automatically called when object is initiated 
-
+		//Magic Method Constructor
 		public function __construct() {		
 			echo 'Hi ' . $this->name;
 			echo "<br>";
