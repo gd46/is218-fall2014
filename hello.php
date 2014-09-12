@@ -35,13 +35,11 @@
 		//Constructor - automatically called when object is initiated 
 		//Magic Method Constructor
 		public function __construct() {		
-			echo 'Hi ' . $this->name;
-			echo "<br>";
+			echo 'Hi ' . $this->name . "\n";
 		}
 
 		public function printHelloWorld(){
-			echo 'Hi ' . $this->name;
-			echo "<br>";
+			echo 'Hi ' . $this->name . "\n";
 		}
 		
 		// When you extend an object or class 
