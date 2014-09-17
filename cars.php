@@ -15,8 +15,14 @@
 	
 
 	foreach($car_orders as $car_order){
+
+		foreach($car_order as $key => $value){
 		
-		print_r($car_order);
+			echo $key . ': ' .$value . "\n";
+
+		}
+
+		echo '<br>';
 
 	}
 	
