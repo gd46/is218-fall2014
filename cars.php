@@ -4,17 +4,40 @@
 	$car_orders[0]['engine'] = 'V6';
 	$car_orders[0]['color'] = 'blue';
 
-
 	$car_orders[1]['model'] = 'mustang';
 	$car_orders[1]['engine'] = 'V6';
 	$car_orders[1]['color'] = 'red';
-	
+
 	$car_orders[2]['model'] = 'focus';
 	$car_orders[2]['engine'] = 'V6';
 	$car_orders[2]['color'] = 'green';
 	
+	if(empty($_GET))
+	{
+		foreach($car_orders as $car_order)
+			{
+				$i++;
+				$car_order_num = $i - 1;
+				
+				/*foreach($car_order as $key => $value)
+				 {
+					echo $key . ': '.$value . "<br>\n";		
+			 	 }	
+			 	 */					                
+			 echo '<a href=' . '"http://web.njit.edu/~gd46/is218/cars.php?car_order=' . $car_order_num . '"' . '>Car Order ' .  $i . '</a>';
+			 echo '</p>';										        
+			}
+	}
 
-	foreach($car_orders as $car_order){
+	
+	$car_order = $car_orders[$_GET['car_order']];
+	
+	foreach($car_order as $key => $value){
+		echo $key . ': '.$value . "<br>\n";
+	}
+	
+	
+	/*foreach($car_orders as $car_order){
 
 		foreach($car_order as $key => $value){
 		
@@ -25,7 +48,7 @@
 		echo '<br>';
 
 	}
-	
+	*/
 
 	
 	// Abstract class not meant to be used on their own
