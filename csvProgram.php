@@ -8,7 +8,7 @@
 		
 		
 		public function readCSVfile($file, $hasColumnheadings){
-			$hasColumnheadings = TRUE;
+			
 			ini_set('auto_detect_line_endings', TRUE);
 			
 			if(($handle = fopen($file, "r")) !== FALSE){
