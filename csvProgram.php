@@ -2,12 +2,14 @@
 
 	class file_handling{
 	
-		public $file;
-		public $hasColumnheadings;
+		private static $file;
+		private static $hasColumnheadings;
 		
 		
-		
-		public function readCSVfile($file, $hasColumnheadings){
+		/* Creating a static function allows this function to be called without 
+		   creating an object. 
+		*/
+		public static function readCSVfile($file, $hasColumnheadings){
 			
 			ini_set('auto_detect_line_endings', TRUE);
 			
@@ -24,40 +26,23 @@
 				}
 				fclose($handle);
 			}
-			print_r($records);
+			//print_r($records);
+			foreach($records as $record){
+				foreach($record as $key => $value){
+					echo $key . ': ' . $value . "<br> \n";
+				}
+				echo '<hr>';
+			}
 		}
 		
 	}
 	
-	$test = new file_handling();
-	$test->readCSVfile("test.csv",TRUE);
+	// This is how you would run this function without static methods.
+	//$test = new file_handling();
+	//$test->readCSVfile("test.csv",TRUE);
 	
+	// Running the readCSVfile method without creating an object.
+	file_handling::readCSVfile("test.csv", TRUE);
 	
-
-	
-	/*$first_row = TRUE;
-	ini_set('auto_detect_line_endings',TRUE);
-	if(($handle = fopen("test.csv", "r")) !== FALSE){
-		while(($row = fgetcsv($handle, 1000, ",")) !== FALSE){
-			if($first_row == TRUE){
-				$column_heading = $row;
-				$first_row = FALSE;
-			}
-			else{
-				$record = array_combine($column_heading, $row);
-				$records[] = $record;
-			}
-		}
-		fclose($handle);
-	}
-	//print_r($records);
-	
-
-	foreach($records as $record){
-		foreach($record as $key => $value){
-			echo $key . ': ' . $value . "<br> \n";
-		}
-		echo '<hr>';
-	}*/
 	
 ?>
